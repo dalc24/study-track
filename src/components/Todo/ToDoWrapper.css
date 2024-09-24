@@ -1,0 +1,100 @@
+/* ToDoWrapper.css */
+.ToDoWrapper {
+  display: flex; /* Keep using flexbox for layout */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -335px; /* Initially off the right side, peeking slightly */
+  width: 350px; /* Width of the sidebar */
+  height: 100%;
+  background-color: #1a1a40ae;
+  transition: right 0.3s ease; /* Smooth transition */
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 280px;
+  color: #fff;
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+  height: 40px; /* Set a consistent height */
+}
+
+.todo-btn {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  height: 40px; /* Match the input's height */
+  margin-left: -1px; /* Overlap with the input to eliminate border seam */
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #8758ff;
+  color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+canvas {
+  z-index: 9999 !important; /* Ensures it appears on top of other elements */
+  pointer-events: none; /* Avoids blocking interaction with other elements */
+}
+
+
+.fa-trash {
+  margin-left: 0.75rem;
+}
+
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+
+.sidebar.open {
+  right: 0; /* When open, the sidebar is fully visible */
+}
+
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 20rem; /* Position at the top */
+  right: 1px; /* Keep the button visible while sidebar is peeking */
+  background-color: #1A1A40;
+  color: white;
+  border: none;
+  padding: 0.75rem; /* Make it larger */
+  cursor: pointer;
+  border-radius: 5px 0 0 5px; /* Rounded corners for the button */
+  z-index: 1001; /* Ensure it's above the sidebar */
+  transition: right 0.3s ease; /* Button moves with the sidebar */
+}
+
+/* Adjust button position based on sidebar state */
+.sidebar.open + .sidebar-toggle-btn {
+  right: 350px; /* Move button along with the sidebar when it opens */
+}

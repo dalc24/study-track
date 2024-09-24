@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Syne:wght@400..800&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  height: 100vh; /* Ensure the body covers the full height */
+  background: linear-gradient(265deg, #3f3787, #ad58e6, #5c0099, #4238c5); 
+ /* background-image: url("gradient.png"); */
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 25s ease infinite; 
+  -o-animation: AnimationName 25s ease infinite;
+  animation: AnimationName 25s ease infinite; 
+}
+
+.timer {
+  font-family: 'Sora', sans-serif;
+  justify-content: center;
+  color: white;
+  padding-top: 40vh;
+  font-size: 8.5rem;
+  font-weight: 800;
+}
+
+@-webkit-keyframes AnimationName {
+  0% { background-position: 0% 15%; }
+  50% { background-position: 100% 86%; }
+  100% { background-position: 0% 15%; }
+}
+
+@-o-keyframes AnimationName {
+  0% { background-position: 0% 15%; }
+  50% { background-position: 100% 86%; }
+  100% { background-position: 0% 15%; }
+}
+
+@keyframes AnimationName {
+  0% { background-position: 0% 15%; }
+  50% { background-position: 100% 86%; }
+  100% { background-position: 0% 15%; }
+} 
+
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}

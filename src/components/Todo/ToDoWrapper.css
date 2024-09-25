@@ -1,4 +1,13 @@
 /* ToDoWrapper.css */
+:root {
+  /* colors for darker */
+  --dark-blue-bg: rgba(15,20,34,255);
+  --blue-sp: rgba(28,37,58,255);
+  --blue-box: rgba(44,55,84,255);
+  --blue-bttn: rgb(61, 102, 157);
+  --blue-text: rgb(90, 109, 134);
+}
+
 .ToDoWrapper {
   display: flex; /* Keep using flexbox for layout */
 }
@@ -9,7 +18,7 @@
   right: -335px; /* Initially off the right side, peeking slightly */
   width: 350px; /* Width of the sidebar */
   height: 100%;
-  background-color: #1a1a40ae;
+  background-color: var(--blue-sp);
   transition: right 0.3s ease; /* Smooth transition */
   z-index: 1000;
   padding: 1rem;
@@ -18,7 +27,7 @@
 .todo-input {
   outline: none;
   background: none;
-  border: 1px solid #8758ff;
+  border: 1px solid var(--blue-box);
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -29,7 +38,7 @@
 }
 
 .todo-btn {
-  background: #8758ff;
+  background: var(--blue-box);
   color: #fff;
   border: none;
   padding: 0.55rem;
@@ -43,7 +52,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #8758ff;
+  background: var(--blue-box);
   color: #fff;
   padding: 1rem 1rem;
   border-radius: 5px;
@@ -66,7 +75,7 @@ canvas {
 }
 
 .completed {
-  color: #c5aeff;
+  color: var(--blue-text);
   text-decoration: line-through;
   cursor: pointer;
 }
@@ -84,7 +93,7 @@ canvas {
   position: fixed;
   top: 20rem; /* Position at the top */
   right: 1px; /* Keep the button visible while sidebar is peeking */
-  background-color: #1A1A40;
+  background-color: var(--blue-bttn);
   color: white;
   border: none;
   padding: 0.75rem; /* Make it larger */

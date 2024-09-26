@@ -1,0 +1,99 @@
+/* calculator wrapper css */
+
+:root {
+    /* colors for darker blue */
+    --dark-blue-bg: rgba(15,20,34,255);
+    --blue-sp: rgba(28,37,58,255);
+    --blue-box: rgba(44,55,84,255);
+    --blue-bttn: rgb(61, 102, 157);
+    --blue-text: rgb(90, 109, 134);
+  }
+
+  .calculator-wrapper {
+    border-radius: 10px;
+    width: 300px; 
+    margin: 50px;
+    padding: 12px;
+    background-color: var(--blue-box); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+
+
+}
+
+.calculator-display {
+    height: 20%;
+    width: 100%;
+    text-align: right;
+    color: white;
+    margin: 0; 
+    padding: 10px;
+    font-size: 3rem;
+    background-color: var(--blue-box); 
+    border: var(--blue-box);
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 5px;
+    
+}
+
+.calculator-toggle-btn {
+    position: fixed;
+    top: 20vh;
+    left: 10vh;
+    width: 70px;
+    height: 70px;
+    background-color: var(--blue-sp);
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.calculator-toggle-btn:hover {
+    background-color: var(--blue-bttn);
+    color: var(--dark-blue-bg);
+    transition: background-color 0.3s;
+
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 5px;
+    justify-items: stretch; 
+}
+
+.btn {
+    padding: 15px; 
+    font-size: 1.5em;
+    border: var(--blue-box);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-number {
+    background-color: var(--blue-text); /* Light gray for number buttons */
+    color: white;
+}
+
+.btn-operator {
+    background-color: var(--blue-bttn); /* Blue for operator buttons */
+    color: white;
+}
+
+.btn-wide {
+    grid-column: span 2;
+    background-color: var(--blue-text);
+    color: white; 
+}

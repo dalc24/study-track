@@ -1,0 +1,138 @@
+:root {
+    /* colors for darker */
+    --dark-blue-bg: rgba(15,20,34,255);
+    --blue-sp: rgba(28,37,58,255);
+    --blue-box: rgba(44,55,84,255);
+    --blue-bttn: rgb(61, 102, 157);
+    --blue-text: rgb(90, 109, 134);
+    --grey-box: rgb(62, 67, 83);
+    --grey-box-tr:  rgba(62, 67, 83, 0.367);
+    --grey-box-tr-text: rgba(255, 255, 255, 0.379);
+    
+  }
+
+  .timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 8%; 
+  }
+
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-size: 12rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .editable-timer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .time-input {
+    font-size: 10rem;
+    font-weight: 600;
+    text-align: center;
+    width: 250px; 
+    padding: 0;
+    margin: 0 10px;
+    border: none; 
+    background: none; 
+    color: white; 
+  }
+  
+  .display-time {
+    font-size: 12rem; /* Match font size for display */
+    font-weight: bold;
+    color: white; /* Display text color */
+  }
+  
+
+  /* Control Buttons */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px; 
+  }
+  
+  .controls button {
+    background-color: var(--grey-box-tr);
+    color: var(--grey-box-tr-text);
+    border: none;
+    padding: 5px 5px;
+    font-size: 18px;
+    margin: 0 5px; 
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 300px;
+    height: 40px;
+  }
+  
+
+  .controls button:hover {
+    background-color: var(--blue-box);
+    color: white;
+  }
+  
+
+  .controls button.active {
+    background-color: var(--grey-box);
+    color: white;
+  }
+  
+
+.start-pause-button {
+    background-color: var(--grey-box);
+    color: white;
+    border: none;
+    padding: 4px 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 90px;
+    height: 40px;
+
+  }
+  
+  .start-pause-button:hover {
+    background-color: var(--blue-box);
+  }
+  
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .reset-button {
+    background-color: var(--grey-box);
+    color: white;
+    border: none;
+    padding: 4px 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 90px; 
+    height: 40px;
+    margin-left: 10px; 
+  }
+  
+  .reset-button:hover {
+    background-color: var(--blue-box);
+  }
+  

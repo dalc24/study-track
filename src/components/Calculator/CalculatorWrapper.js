@@ -36,7 +36,11 @@ const CalculatorWrapper = () => {
     };
 
     const handleDeleteChar = () => {
-        setInput((prevInput) => prevInput.slice(0, -1));
+        try {
+            setInput((prevInput) => prevInput.slice(0, -1));
+        } catch (error) {
+            setInput('Error');
+        }
     };
 
     const handleMouseDown = (e) => {

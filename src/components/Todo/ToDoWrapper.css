@@ -5,7 +5,7 @@
   --blue-sp: rgba(28,37,58,255);
   --blue-box: rgba(44,55,84,255);
   --blue-bttn: rgb(61, 102, 157);
-  --blue-text: rgb(90, 109, 134);
+  --blue-bttn: rgb(90, 109, 134);
 }
 
 .ToDoWrapper {
@@ -75,7 +75,7 @@ canvas {
 }
 
 .completed {
-  color: var(--blue-text);
+  color: var(--blue-bttn);
   text-decoration: line-through;
   cursor: pointer;
 }

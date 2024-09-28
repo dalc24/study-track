@@ -7,6 +7,7 @@
     --blue-box: rgba(44,55,84,255);
     --blue-bttn: rgb(61, 102, 157);
     --blue-text: rgb(90, 109, 134);
+    --blue-light: #7387bf;
   }
 
   .calculator-wrapper {
@@ -14,7 +15,7 @@
     width: 300px; 
     margin: 50px;
     padding: 12px;
-    background-color: var(--blue-box); 
+    background-color: var(--blue-sp); 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -31,7 +32,7 @@
     margin: 0; 
     padding: 10px;
     font-size: 3rem;
-    background-color: var(--blue-box); 
+    background-color: var(--blue-sp); 
     border: var(--blue-box);
     border-top-left-radius: 5px; 
     border-top-right-radius: 5px;

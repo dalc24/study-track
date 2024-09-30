@@ -39,13 +39,6 @@ export const TodoWrapper = () => {
         );
     };
 
- /*   const toggleComplete = (id) => {
-        setToDos(
-            todos.map((todo) =>
-                todo.id === id ? { ...todo, completed: !todo.completed } : todo
-            )
-        );
-    }; */
 
     const toggleComplete = (id) => {
         setToDos(
@@ -72,7 +65,7 @@ export const TodoWrapper = () => {
     return (
         <div className="ToDoWrapper">
           <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-            <h1>Get Things Done!</h1>
+            <h1>Let's Get It Done!</h1>
             <TodoForm addToDo={addToDo} />
       
             {todos.map((todo) =>

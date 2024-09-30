@@ -21,7 +21,7 @@ export const TodoForm = ({ addToDo }) => {
                 value={value}
                 onChange={(e) => setValue(e.target.value)} 
                 className="todo-input" 
-                placeholder="What is your task"
+                placeholder="What is your task?"
             />
             <button type='submit' className='todo-btn'>
                 <FontAwesomeIcon icon={faPlus} /> {/* Use the plus icon */}

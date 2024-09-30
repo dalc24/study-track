@@ -60,10 +60,9 @@
 }
 
 canvas {
-  z-index: 9999 !important; /* Ensures it appears on top of other elements */
-  pointer-events: none; /* Avoids blocking interaction with other elements */
+  z-index: 9999 !important;
+  pointer-events: none;
 }
-
 
 .fa-trash {
   margin-left: 0.75rem;

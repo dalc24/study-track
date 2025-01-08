@@ -4,7 +4,6 @@ const { MongoClient, ObjectId } = require('mongodb');
 const cors = require('cors');
 
 // MongoDB connection URI
-//const uri = "mongodb+srv://funnyswaggame:mYnMg4B7Rvk27tMb@study.0k3d8.mongodb.net/";
 const uri = process.env.MONGO_URI;
 
 

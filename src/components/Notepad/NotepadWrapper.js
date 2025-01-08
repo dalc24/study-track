@@ -7,22 +7,66 @@ export const NotepadWrapper = () => {
     const [isNotepadOpen, setIsNotepadOpen] = useState(false);
     const [noteText, setNoteText] = useState("");
     const [position, setPosition] = useState({ x: 0, y: 0 });
-    const notepadRef = useRef(null); 
+    const [noteId, setNoteId] = useState(null);
+    const notepadRef = useRef(null);
 
     const toggleNotepad = () => {
         setIsNotepadOpen(!isNotepadOpen);
     };
 
     useEffect(() => {
-        const savedNote = localStorage.getItem("userNote");
-        if (savedNote) {
-            setNoteText(savedNote);
-        }
+        const fetchNote = async () => {
+            try {
+                const response = await fetch("http://localhost:5000/notes");
+                const notes = await response.json();
+                if (notes.length > 0) {
+                    // text field from backend
+                    setNoteText(notes[0].text); 
+                    setNoteId(notes[0]._id);
+                }
+            } catch (error) {
+                console.error("Error fetching notes:", error);
+            }
+        };
+
+        fetchNote();
     }, []);
 
-    const handleBlur = () => {
-        localStorage.setItem("userNote", noteText);
-        console.log("Note saved", noteText);
+    const handleBlur = async () => {
+        if (noteText.trim() === "") {
+            console.log("Note text is empty, skipping save.");
+            return;
+        }
+
+        try {
+            if (noteId) {
+                const response = await fetch(`http://localhost:5000/notes/${noteId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: noteText }),
+                });
+                if (response.ok) {
+                    console.log("Note updated", noteText);
+                } else {
+                    console.error("Failed to update note");
+                }
+            } else {
+                const response = await fetch("http://localhost:5000/notes", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: noteText }),
+                });
+                const newNote = await response.json();
+                setNoteId(newNote._id);
+                console.log("New note created", newNote);
+            }
+        } catch (error) {
+            console.error("Error saving note:", error);
+        }
     };
 
     const handleMouseDown = (e) => {
@@ -44,12 +88,12 @@ export const NotepadWrapper = () => {
 
     return (
         <div className="NotepadWrapper"
-            style={{ left: position.x, top: position.y, position: 'fixed' }} 
+            style={{ left: position.x, top: position.y, position: 'fixed' }}
             ref={notepadRef}
             onMouseDown={handleMouseDown}
         >
             <button className="notepad-toggle-btn" onClick={toggleNotepad}>
-            <FontAwesomeIcon icon={faPencil} />
+                <FontAwesomeIcon icon={faPencil} />
             </button>
 
             {isNotepadOpen && (

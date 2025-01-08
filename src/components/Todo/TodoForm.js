@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons'; // Import the plus icon
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 export const TodoForm = ({ addToDo }) => {
     const [value, setValue] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        console.log("Form submitted with value:", value);
         if (value) {
             addToDo(value);
             setValue('');
@@ -24,7 +24,7 @@ export const TodoForm = ({ addToDo }) => {
                 placeholder="What is your task?"
             />
             <button type='submit' className='todo-btn'>
-                <FontAwesomeIcon icon={faPlus} /> {/* Use the plus icon */}
+                <FontAwesomeIcon icon={faPlus} />
             </button>
         </form>
     );
